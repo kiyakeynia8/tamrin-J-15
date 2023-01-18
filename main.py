@@ -12,9 +12,9 @@ class Game(arcade.Window):
         self.width = 500
         self.height = 500
         self.snake = Snake(self)
-        self.apple_food = Apple(self)
-        self.rock = Rock(self)
-        self.pear_food = Pear(self)
+        self.apple_food = Apple(self.width,self.height)
+        self.rock = Rock(self.width,self.height)
+        self.pear_food = Pear(self.width,self.height)
 
         self.a = 1
 
@@ -41,11 +41,11 @@ class Game(arcade.Window):
 
             self.a = random.randint(1, 3)
             if self.a == 1:
-                self.apple_food = Apple(self)
+                self.apple_food = Apple(self.width,self.height)
             if self.a == 2:
-                self.rock = Rock(self)
+                self.rock = Rock(self.width,self.height)
             if self.a == 3:
-                self.pear_food == Pear(self)
+                self.pear_food == Pear(self.width,self.height)
 
         if self.snake.score == 0:
             arcade.draw_text("Game over", self.height//2, self.width//2)
