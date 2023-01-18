@@ -9,6 +9,8 @@ class Game(arcade.Window):
         super().__init__(width=500, height=500, title="super_snake -- V1")
         arcade.set_background_color(arcade.color.KHAKI)
 
+        self.width = 500
+        self.height = 500
         self.snake = Snake(self)
         self.apple_food = Apple(self)
         self.rock = Rock(self)
