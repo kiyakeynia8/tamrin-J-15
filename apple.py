@@ -12,9 +12,9 @@ class Apple(arcade.Sprite):
         self.change_y = 0
 
 class Rock(Apple):
-    def __init__(self,game):
+    def __init__(self,Game):
         super().__init__("my-project\session15\pear.png")
 
 class Pear(Apple):
-    def __init__(self,game):
+    def __init__(self,Game):
         super().__init__("my-project\session15\pear.png")
