@@ -1,4 +1,5 @@
 import random
+import time
 import arcade
 from apple import Apple,Pear,Rock
 from snake import Snake
@@ -43,6 +44,23 @@ class Game(arcade.Window):
                 self.rock = Rock(self)
             if self.a == 3:
                 self.pear_food == Pear(self)
+
+        if self.snake.score == 0:
+            arcade.draw_text("Game over", self.height//2, self.width//2)
+            time.sleep(5)
+            exit(0)
+
+        for part in self.snake.body:
+            for partt in self.snake.body:
+                if arcade.check_for_collision(part, partt):
+                    arcade.draw_text("Game over", self.height//2, self.width//2)
+                    time.sleep(5)
+                    exit(0)
+
+        if self.snake.center_x == 0 or self.snake.center_x == self.width or self.snake.center_y == 0 or self.snake.center_x == self.height:
+            arcade.draw_text("Game over", self.height//2, self.width//2)
+            time.sleep(5)
+            exit(0)
 
     def on_key_press(self, symbol, modifiers):
         if symbol == arcade.key.UP:
