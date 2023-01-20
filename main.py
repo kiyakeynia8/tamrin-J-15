@@ -48,7 +48,7 @@ class Game(arcade.Window):
                 self.pear_food == Pear(self.width,self.height)
 
         if self.snake.score == 0:
-            arcade.draw_text("Game over", self.height//2, self.width//2)
+            arcade.draw_text("Game over", self.height//2, self.width//2, font_size=40)
             time.sleep(5)
             exit(0)
 
@@ -60,7 +60,7 @@ class Game(arcade.Window):
                     exit(0)
 
         if self.snake.center_x == 0 or self.snake.center_x == self.width or self.snake.center_y == 0 or self.snake.center_x == self.height:
-            arcade.draw_text("Game over", self.height//2, self.width//2)
+            arcade.draw_text("Game over", self.height//2, self.width//2,font_size=40)
             time.sleep(5)
             exit(0)
 
