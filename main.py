@@ -52,13 +52,6 @@ class Game(arcade.Window):
             time.sleep(5)
             exit(0)
 
-        for part in self.snake.body:
-            for partt in self.snake.body:
-                if arcade.check_for_collision(part, partt):
-                    arcade.draw_text("Game over", self.height//2, self.width//2)
-                    time.sleep(5)
-                    exit(0)
-
         if self.snake.center_x == 0 or self.snake.center_x == self.width or self.snake.center_y == 0 or self.snake.center_x == self.height:
             arcade.draw_text("Game over", self.height//2, self.width//2,font_size=40)
             time.sleep(5)
